@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+
+<!-- Check device width for responsive media queries -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<title>  RedHat Enterprise Linux upgrade</title>
+
+	
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/style.css" />
+
+
+<link rel="pingback" href="http://www.andersand.com/xmlrpc.php" />
+
+<!--[if lt IE 9]>
+<script src="https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+
+<link rel='stylesheet' id='nivo-slider-css'  href='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/functions/shortcodes-ultimate/css/nivoslider.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jcarousel-css'  href='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/functions/shortcodes-ultimate/css/jcarousel.css' type='text/css' media='all' />
+<link rel='stylesheet' id='shortcodes-ultimate-css'  href='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/functions/shortcodes-ultimate/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flexslider-style-css'  href='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/CSS/flexslider.css?ver=3.5.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.andersand.com/wp-includes/js/jquery/jquery.js?ver=1.8.3'></script>
+<script type='text/javascript' src='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/functions/shortcodes-ultimate/js/nivoslider.js'></script>
+<script type='text/javascript' src='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/functions/shortcodes-ultimate/js/jcarousel.js'></script>
+<script type='text/javascript' src='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/functions/shortcodes-ultimate/js/init.js'></script>
+<script type='text/javascript' src='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/js/superfish.js?ver=3.5.1'></script>
+<script type='text/javascript' src='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/js/jquery.flexslider-min.js?ver=3.5.1'></script>
+<script type='text/javascript' src='https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/js/jquery.masonry.min.js?ver=2.0.110526'></script>
+<script type='text/javascript' src='https://www.andersand.com/wp-includes/js/comment-reply.min.js?ver=3.5.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.andersand.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.andersand.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Open Source Projects' href='https://www.andersand.com/projects/' />
+<link rel='next' title='Server Virtualization' href='https://www.andersand.com/server-virtualization/' />
+
+<link rel='canonical' href='https://www.andersand.com/redhat-enterprise-linux-upgrade/' />
+    		<script> 
+ 			    jQuery(document).ready(function() { 
+ 			       jQuery('ul.sf-menu').superfish();
+ 			       jQuery('.sf-menu ul').superfish();
+ 			   }); 
+			</script>
+    			    	<script type="text/javascript">
+		    	jQuery(document).ready(function() {
+	    			jQuery('.video').fitVids();
+	    		});
+    		</script><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #cfe7c1; }
+</style>
+</head>
+
+<body class="page page-id-41 page-template-default custom-background">
+<div id="webpage">
+<!--   PREHEADER  --->
+	<div id="preheader" class="wrapper">
+		<ul id="social-links">
+						<li>
+				<a href="https://www.andersand.com/feed" title="Andersand RSS feed">
+					<i class="icon-rss"></i>
+					<span class="assistive-text">Andersand RSS feed</span>
+				</a>
+			</li>
+
+		</ul>
+		<aside id="header-search" class="group">
+			<form method="get" id="searchform" action="https://www.andersand.com/">
+				<div>
+					<input type="text" size="put_a_size_here" name="s" id="s" value="Search..." onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"/>
+					<input type="image" src="https://www.andersand.com/wp-content/themes/simply-works-responsive-dev/images/header-search.png" id="searchsubmit" />
+				</div>
+			</form>
+		</aside>
+	</div>
+<!-- #preheader -->
+<!--  PAGEHEADER  -->	
+	<header id="pageheader" class="wrapper">
+
+		
+		<div id="header_margin">		<div class="header-container group">
+			
+			<hgroup id="header-title">
+				<h1 id="site-title"><a href="https://www.andersand.com/" title="Andersand" rel="home"><img src="http://www.andersand.com/images/andersand-logo.png" alt="andersand" /></a></h1>
+				<h2 id="site-description">Linux Support</h2>
+			</hgroup>
+			
+			
+					<nav id="access" class="group" role="navigation">
+						<h1 class="assistive-text section-heading">Main menu</h1>
+						<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+						<div class="menu-top-menu-container"><ul id="menu-top-menu" class="sf-menu"><li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a title="Let&#8217;s Start with a Plan!" href="https://www.andersand.com/">Home</a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-38"><a title="Open Source Linux Project" href="https://www.andersand.com/projects/">Open Source Projects</a>
+<ul class="sub-menu">
+	<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-41 current_page_item menu-item-42"><a href="https://www.andersand.com/redhat-enterprise-linux-upgrade/">RedHat Enterprise Linux upgrade</a></li>
+	<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="https://www.andersand.com/server-virtualization/">Server Virtualization</a></li>
+	<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="https://www.andersand.com/web-based-reporting-system/">Web-based reporting system</a></li>
+</ul>
+</li>
+<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://www.andersand.com/closed-source-projects/">Closed Source Projects</a>
+<ul class="sub-menu">
+	<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="https://www.andersand.com/security-mass-account-disable-state-government/">Security &#8211; State Government</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://www.andersand.com/unix-security-compliance-detection/">Unix security compliance detection</a></li>
+</ul>
+</li>
+</ul></div>					</nav><!-- #access -->
+							
+		</div><!-- .header-container -->
+		</div><!-- #header_margin or #header_image_margin -->
+
+		
+		
+			
+	</header><!-- #site-header -->
+	
+	
+
+	
+	
+
+	<div id="main" class="wrapper group">
+		<div id="content-container">
+			<div id="content" role="main">
+
+				
+					
+<article id="post-41" class="group post-container">
+	<header class="entry-header">
+		<h1 class="entry-title">RedHat Enterprise Linux upgrade</h1>
+		
+		
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p><em>Please pardon the lack of specific company names. Much of our work is performed under NDA, so while generals can be discussed, any information which could provide advantage to a competitor or expose weaknesses is obscured.</em></p>
+<h4>Fleet-wide RedHat Enterprise Linux upgrade, Major Retailer:</h4>
+<blockquote><p> A major retailer had let their Linux fleet run for several years without consistent patching &#8212; 700+ x86 machines running various versions RedHat Enterprise Linux 3 through 5. Furthermore, these machines were running different levels of system board and HBA firmware. Over six weeks, AnderSand designed and implemented a set of upgrade scripts which leveraged their existing (but underutilized) Satellite infrastructure. In addition to upgrading all machines to the most recent revision, HBAs were flashed with updated firmware, vendor-specific support packages were upgraded, and system BIOS flashed. Rolling upgrades were massively successful, eliminating inconsistencies among machines and greatly reducing associated troubletickets. As an added bonus, all RHEL4 and RHEL5 machines were configured with HP SIM (System Insight Manager), allowing phone-home capability on detection of hardware errors.</p></blockquote>
+					</div><!-- .entry-content -->
+</article><!-- #post-41 -->
+
+					
+<div id="comments">
+	
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #content-container -->
+
+
+	</div><!-- #main -->
+    	<footer id="colophon" class="wrapper" role="contentinfo">
+
+		
+			<div id="footer-sidebar" class="widget-area" role="complementary">
+			<ul class="group">
+				<li id="nav_menu-2" class="widget widget_nav_menu"><h1 class="widget-title">Our Work</h1><div class="menu-widget-menu-container"><ul id="menu-widget-menu" class="menu"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-41 current_page_item menu-item-56"><a href="https://www.andersand.com/redhat-enterprise-linux-upgrade/">RedHat Enterprise Linux upgrade</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="https://www.andersand.com/server-virtualization/">Server Virtualization</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="https://www.andersand.com/web-based-reporting-system/">Web-based reporting system</a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="https://www.andersand.com/security-mass-account-disable-state-government/">Security &#8211; State Government</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="https://www.andersand.com/unix-security-compliance-detection/">Unix security compliance detection</a></li>
+</ul></div></li><li id="text-2" class="widget widget_text"><h1 class="widget-title">Principles</h1>			<div class="textwidget"><p>Good planning reduces the incidence of panic and  automate everything</p>
+</div>
+		</li><li id="text-3" class="widget widget_text"><h1 class="widget-title">Expertise</h1>			<div class="textwidget"><p>We have extensive experience in retail, education and Government, using both open-source and proprietary solutions.</p>
+</div>
+		</li><li id="text-4" class="widget widget_text"><h1 class="widget-title">Security</h1>			<div class="textwidget"><p>automatically and continually ensuring security compliance across thousands of servers, we’ve done it!!</p>
+</div>
+		</li>			</ul>
+		</div><!-- #secondary .widget-area -->
+			
+
+		<div id="footer-content">
+         <div id="mobile-ready" class="block33">
+        Mobile Ready<br /><br />
+        <i class="icon-desktop icon-3x"></i>&nbsp;&nbsp;
+        <i class="icon-laptop icon-3x"></i>&nbsp;&nbsp;
+         <i class="icon-tablet icon-3x"></i>&nbsp;&nbsp;
+        <i class="icon-mobile-phone icon-3x"></i>
+        </div>
+			<div id="site-generator" class="block33">
+				<p>
+				Theme: Simply Works Responsive 1.1 by <a href="http://simplyworksweb.com/" rel="nofollow">Simply Works Consulting, Inc.</a>.				</p>
+				<p><a href="#content"> ^ Click here to get back on top ^</a></p>
+			</div>
+             <div id="footer-social" class="block33">
+       <ul id="social-links">
+						<li>
+				<a href="https://www.andersand.com/feed" title="Andersand RSS feed">
+					<i class="icon-rss icon-3x"></i>
+					<span class="assistive-text">Andersand RSS feed</span>
+				</a>
+			</li>
+
+		</ul>
+        </div>
+        
+		</div>
+	</footer><!-- #colophon -->
+</div><!-- #wrapper -->
+
+			
+			<script>
+				jQuery(document).ready(function($){
+
+					$('.flexslider').flexslider();
+				});
+			</script>
+					<script>
+				jQuery(document).ready(function($){
+					$('#masonry-index').masonry({
+						itemSelector: '.index-post-container',
+						isAnimated: true
+					});
+			  	});
+			</script>
+
+</body>
+</html>
